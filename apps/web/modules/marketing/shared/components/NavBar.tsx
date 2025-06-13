@@ -1,11 +1,7 @@
 "use client";
 
 import { LocaleLink, useLocalePathname } from "@i18n/routing";
-import { config } from "@repo/config";
 import { useSession } from "@saas/auth/hooks/use-session";
-import { ColorModeToggle } from "@shared/components/ColorModeToggle";
-import { LocaleSwitch } from "@shared/components/LocaleSwitch";
-import { Logo } from "@shared/components/Logo";
 import { Button } from "@ui/components/button";
 import {
 	Sheet,
@@ -38,7 +34,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import NextLink from "next/link";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDebounceCallback } from "usehooks-ts";
 
 const solutions = [
@@ -235,36 +231,19 @@ export function NavBar() {
 
 					{/* Right side actions */}
 					<div className="flex items-center gap-3">
-						<ColorModeToggle />
-						{config.i18n.enabled && (
-							<Suspense>
-								<LocaleSwitch />
-							</Suspense>
-						)}
-
 						{/* Desktop CTAs */}
 						<div className="hidden lg:flex items-center gap-3">
-							<Button variant="ghost" asChild>
-								<LocaleLink href="/investors">
-									For Investors
-								</LocaleLink>
-							</Button>
 							{user ? (
 								<Button asChild>
 									<NextLink href="/app">Dashboard</NextLink>
 								</Button>
 							) : (
-								<>
-									<Button variant="ghost" asChild>
-										<NextLink href="/auth/login">Sign In</NextLink>
-									</Button>
-									<Button asChild className="bg-primary hover:bg-primary/90">
-										<LocaleLink href="/#demo" className="flex items-center gap-2">
-											<Phone className="h-4 w-4" />
-											Book Demo
-										</LocaleLink>
-									</Button>
-								</>
+								<Button asChild className="bg-primary hover:bg-primary/90">
+									<LocaleLink href="/#demo" className="flex items-center gap-2">
+										<Phone className="h-4 w-4" />
+										Book Demo
+									</LocaleLink>
+								</Button>
 							)}
 						</div>
 
@@ -305,6 +284,9 @@ export function NavBar() {
 
 									{/* Mobile main links */}
 									<div className="flex flex-col gap-2">
+										<LocaleLink href="/industries" className="px-2 py-1.5 text-sm font-medium hover:text-primary">
+											Industries
+										</LocaleLink>
 										<LocaleLink href="/technology" className="px-2 py-1.5 text-sm font-medium hover:text-primary">
 											Technology
 										</LocaleLink>
@@ -335,22 +317,17 @@ export function NavBar() {
 
 									{/* Mobile CTAs */}
 									<div className="flex flex-col gap-2 mt-4 pt-4 border-t">
-										<Button variant="outline" asChild className="w-full">
-											<LocaleLink href="/investors">For Investors</LocaleLink>
-										</Button>
 										{user ? (
 											<Button asChild className="w-full">
 												<NextLink href="/app">Dashboard</NextLink>
 											</Button>
 										) : (
-											<>
-												<Button variant="ghost" asChild className="w-full">
-													<NextLink href="/auth/login">Sign In</NextLink>
-												</Button>
-												<Button asChild className="w-full">
-													<LocaleLink href="/demo">Book Demo</LocaleLink>
-												</Button>
-											</>
+											<Button asChild className="w-full bg-primary hover:bg-primary/90">
+												<LocaleLink href="/#demo" className="flex items-center gap-2">
+													<Phone className="h-4 w-4" />
+													Book Demo
+												</LocaleLink>
+											</Button>
 										)}
 									</div>
 								</div>
