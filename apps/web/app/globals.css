@@ -1,12 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
 @import "tailwindcss";
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 @import "@repo/tailwind-config/theme.css";
 @import "@repo/tailwind-config/tailwind-animate.css";
-
-/* Import Inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
 
 @source "../node_modules/fumadocs-ui/dist/**/*.js";
 
@@ -140,7 +138,7 @@ input[cmdk-input] {
 	}
 
 	.gradient-blue {
-		@apply bg-gradient-to-r from-primary via-accent to-sky-blue bg-clip-text text-transparent;
+		@apply bg-gradient-to-r from-primary via-accent to-sky-400 bg-clip-text text-transparent;
 	}
 }
 

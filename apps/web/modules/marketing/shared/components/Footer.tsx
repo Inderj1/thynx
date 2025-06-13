@@ -159,7 +159,7 @@ export function Footer() {
 											className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
 										>
 											{link.label}
-											{link.badge && (
+											{'badge' in link && link.badge && (
 												<span className="px-2 py-0.5 bg-primary text-primary-foreground text-xs rounded-full">
 													{link.badge}
 												</span>

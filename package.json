@@ -2,9 +2,9 @@
 	"name": "supastarter-nextjs",
 	"private": true,
 	"scripts": {
-		"build": "dotenv -c -- turbo build",
-		"dev": "dotenv -c -- turbo dev --concurrency 15",
-		"start": "dotenv -c -- turbo start",
+		"build": "dotenv -- turbo build",
+		"dev": "dotenv -- turbo dev --concurrency 15",
+		"start": "dotenv -- turbo start",
 		"lint": "biome lint .",
 		"clean": "turbo clean",
 		"format": "biome format . --write"

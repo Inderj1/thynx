@@ -43,8 +43,8 @@ import { useDebounceCallback } from "usehooks-ts";
 
 const solutions = [
 	{
-		title: "Enterprise",
-		href: "/solutions/enterprise",
+		title: "Enterprise Solutions",
+		href: "/solutions",
 		description: "Scale your call center with AI-powered automation",
 		icon: Building2,
 	},

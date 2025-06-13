@@ -174,7 +174,7 @@ export function PricingSection() {
 									<>
 										<div className="flex items-baseline gap-1">
 											<span className="text-4xl font-bold">
-												${billingInterval === "monthly" ? plan.price.monthly.toLocaleString() : plan.price.yearly.toLocaleString()}
+												${billingInterval === "monthly" ? plan.price.monthly?.toLocaleString() : plan.price.yearly?.toLocaleString()}
 											</span>
 											<span className="text-muted-foreground">/{billingInterval === "monthly" ? "month" : "year"}</span>
 										</div>
@@ -217,7 +217,7 @@ export function PricingSection() {
 									"w-full",
 									plan.recommended ? "bg-primary hover:bg-primary/90" : ""
 								)}
-								variant={plan.recommended ? "default" : "outline"}
+								variant={plan.recommended ? "primary" : "outline"}
 								asChild
 							>
 								<a href={plan.price.custom ? "/contact" : "/auth/signup"}>
