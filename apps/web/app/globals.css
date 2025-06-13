@@ -4,6 +4,10 @@
 @import "@repo/tailwind-config/theme.css";
 @import "@repo/tailwind-config/tailwind-animate.css";
 
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
 @source "../node_modules/fumadocs-ui/dist/**/*.js";
 
 @variant dark (&:where(.dark, .dark *));
@@ -39,4 +43,121 @@ div[role="tablist"].bg-secondary {
 
 input[cmdk-input] {
 	@apply border-none focus-visible:ring-0;
+}
+
+/* Typography System */
+@layer base {
+	html {
+		font-family: 'Inter', system-ui, -apple-system, sans-serif;
+	}
+
+	h1 {
+		@apply text-[clamp(2rem,4vw,3.5rem)] font-bold leading-tight;
+	}
+
+	h2 {
+		@apply text-[clamp(1.5rem,3vw,2.5rem)] font-semibold leading-tight;
+	}
+
+	h3 {
+		@apply text-[clamp(1.25rem,2.5vw,2rem)] font-semibold;
+	}
+
+	h4 {
+		@apply text-[clamp(1.125rem,2vw,1.5rem)] font-medium;
+	}
+
+	body {
+		@apply text-lg;
+	}
+
+	.text-hero {
+		@apply text-[clamp(2.5rem,5vw,5rem)] font-bold leading-tight;
+	}
+
+	code, pre {
+		font-family: 'Fira Code', monospace;
+	}
+}
+
+/* Animations */
+@layer utilities {
+	.animate-fade-in {
+		animation: fadeIn 0.5s ease-in-out;
+	}
+
+	.animate-slide-up {
+		animation: slideUp 0.6s ease-out;
+	}
+
+	.animate-scale-in {
+		animation: scaleIn 0.4s ease-out;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@keyframes slideUp {
+		from { 
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to { 
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes scaleIn {
+		from { 
+			opacity: 0;
+			transform: scale(0.9);
+		}
+		to { 
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
+
+/* Glass morphism effect */
+@layer utilities {
+	.glass {
+		@apply backdrop-blur-md bg-white/80 dark:bg-card/80 border border-border/50;
+	}
+
+	.glass-dark {
+		@apply backdrop-blur-md bg-card/50 border border-border/30;
+	}
+}
+
+/* Gradient text */
+@layer utilities {
+	.gradient-text {
+		@apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+	}
+
+	.gradient-blue {
+		@apply bg-gradient-to-r from-primary via-accent to-sky-blue bg-clip-text text-transparent;
+	}
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-primary/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-primary/30;
 }
