@@ -120,10 +120,10 @@ export function MetricsSection() {
 						<TrendingUp className="h-4 w-4" />
 						Performance Metrics
 					</div>
-					<h2 className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up">
+					<h2 className="text-3xl md:text-4xl font-semibold mb-4 animate-slide-up">
 						Proven Results at <span className="gradient-blue text-glow">Scale</span>
 					</h2>
-					<p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+					<p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
 						THNYX delivers measurable impact across every metric that matters to your business
 					</p>
 				</div>
@@ -150,7 +150,7 @@ export function MetricsSection() {
 								</span>
 							</div>
 							<div className="space-y-2">
-								<div className="text-3xl font-bold gradient-blue group-hover:text-glow transition-all">
+								<div className="text-2xl font-semibold gradient-blue group-hover:text-glow transition-all">
 									{isVisible && (
 										<AnimatedCounter
 											value={metric.value}
@@ -159,8 +159,8 @@ export function MetricsSection() {
 										/>
 									)}
 								</div>
-								<div className="font-medium text-foreground/90">{metric.label}</div>
-								<div className="text-sm text-muted-foreground">{metric.description}</div>
+								<div className="font-medium text-foreground/90 text-sm">{metric.label}</div>
+								<div className="text-xs text-muted-foreground">{metric.description}</div>
 							</div>
 						</div>
 					))}

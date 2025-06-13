@@ -126,10 +126,10 @@ export function DemoRequestSection() {
 						<Zap className="h-4 w-4" />
 						See THNYX in Action
 					</div>
-					<h2 className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up">
+					<h2 className="text-3xl md:text-4xl font-semibold mb-4 animate-slide-up">
 						Request a <span className="gradient-blue text-glow">Demo Today</span>
 					</h2>
-					<p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+					<p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
 						Discover how THNYX can transform your call center operations and reduce costs by 70%
 					</p>
 				</div>
@@ -137,7 +137,7 @@ export function DemoRequestSection() {
 				<div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
 					{/* Left side - Benefits */}
 					<div>
-						<h3 className="text-2xl font-bold mb-8">What to expect</h3>
+						<h3 className="text-xl font-semibold mb-8">What to expect</h3>
 						
 						<div className="space-y-6 mb-8">
 							{benefits.map((benefit, idx) => (
@@ -150,7 +150,7 @@ export function DemoRequestSection() {
 										<benefit.icon className="h-6 w-6 text-primary" />
 									</div>
 									<div>
-										<h4 className="font-semibold mb-1">{benefit.title}</h4>
+										<h4 className="font-medium mb-1 text-base">{benefit.title}</h4>
 										<p className="text-muted-foreground">{benefit.description}</p>
 									</div>
 								</div>
@@ -159,7 +159,7 @@ export function DemoRequestSection() {
 
 						{/* Demo type selector */}
 						<div className="space-y-4">
-							<h4 className="font-semibold">Choose your demo experience</h4>
+							<h4 className="font-medium text-base">Choose your demo experience</h4>
 							<div className="space-y-3">
 								{demoTypes.map((type) => (
 									<button
@@ -193,7 +193,7 @@ export function DemoRequestSection() {
 						<div className="mt-8 p-4 rounded-lg bg-primary/5 border border-primary/20 glass-card hover:scale-105 transition-transform cursor-pointer">
 							<div className="grid grid-cols-3 gap-4 text-center">
 								<div>
-									<div className="text-2xl font-bold gradient-blue animate-gradient">500+</div>
+									<div className="text-xl font-semibold gradient-blue animate-gradient">500+</div>
 									<div className="text-xs text-muted-foreground">Demos Given</div>
 								</div>
 								<div>

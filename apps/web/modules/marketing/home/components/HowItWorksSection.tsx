@@ -17,7 +17,7 @@ const steps = [
     {
         number: "01",
         title: "Connect Your Systems",
-        description: "Seamlessly integrate THNYX with your existing CRM, phone systems, and databases in minutes",
+        description: "Integrate THNYX with your existing CRM, phone systems, and databases in minutes",
         icon: Plug,
         image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
         features: [
@@ -43,7 +43,7 @@ const steps = [
     {
         number: "03",
         title: "Deploy Instantly",
-        description: "Go live with AI agents handling calls immediately. Scale from 1 to 10,000 agents on demand",
+        description: "Go live with AI agents handling calls. Scale from 1 to 10,000 agents on demand",
         icon: Rocket,
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
         features: [
@@ -85,11 +85,11 @@ export function HowItWorksSection() {
                         <Zap className="h-4 w-4" />
                         Simple Setup Process
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up">
+                    <h2 className="text-3xl md:text-4xl font-semibold mb-4 animate-slide-up">
                         From Zero to AI-Powered in
                         <span className="gradient-blue text-glow"> 7 Days</span>
                     </h2>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
                         Our streamlined onboarding process gets you up and running faster than any competitor
                     </p>
                 </div>
