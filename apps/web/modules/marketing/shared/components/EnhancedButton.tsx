@@ -18,7 +18,7 @@ export const EnhancedButton = forwardRef<HTMLButtonElement, EnhancedButtonProps>
 				ref={ref}
 				variant={variant}
 				className={cn(
-					"relative overflow-hidden transition-all duration-300",
+					"relative overflow-hidden transition-all duration-300 group",
 					"hover:shadow-xl hover:-translate-y-0.5",
 					glow && "animate-pulse-glow",
 					float && "animate-float",
@@ -29,7 +29,7 @@ export const EnhancedButton = forwardRef<HTMLButtonElement, EnhancedButtonProps>
 				{...props}
 			>
 				{/* Shimmer effect on hover */}
-				<span className="absolute inset-0 -translate-x-full hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+				<span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 				<span className="relative z-10 flex items-center gap-2">
 					{children}
 				</span>

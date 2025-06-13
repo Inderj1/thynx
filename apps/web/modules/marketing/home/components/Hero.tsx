@@ -90,19 +90,19 @@ export function Hero() {
 
 				{/* CTA Buttons */}
 				<div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-					<EnhancedButton size="lg" asChild className="min-w-[200px]" glow gradient>
-						<LocaleLink href="/demo">
+					<LocaleLink href="/demo">
+						<EnhancedButton size="lg" className="min-w-[200px]" glow gradient>
 							<Phone className="h-5 w-5" />
 							Book Live Demo
 							<ArrowRightIcon className="h-4 w-4" />
-						</LocaleLink>
-					</EnhancedButton>
-					<EnhancedButton size="lg" variant="outline" asChild className="min-w-[200px]" gradient>
-						<LocaleLink href="/investors">
+						</EnhancedButton>
+					</LocaleLink>
+					<LocaleLink href="/investors">
+						<EnhancedButton size="lg" variant="outline" className="min-w-[200px]" gradient>
 							<Play className="h-5 w-5" />
 							Watch 2-min Pitch
-						</LocaleLink>
-					</EnhancedButton>
+						</EnhancedButton>
+					</LocaleLink>
 				</div>
 
 				{/* Trust indicators */}
