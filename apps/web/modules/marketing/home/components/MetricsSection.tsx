@@ -106,21 +106,24 @@ export function MetricsSection() {
 	}, []);
 
 	return (
-		<section id="metrics-section" className="py-20 relative overflow-hidden">
-			{/* Background pattern */}
+		<section id="metrics-section" className="py-20 relative overflow-hidden noise-overlay">
+			{/* Enhanced background */}
+			<div className="absolute inset-0 gradient-mesh opacity-20" />
 			<div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+			<div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px] animate-pulse-glow" />
+			<div className="absolute left-0 bottom-1/2 h-[300px] w-[300px] rounded-full bg-accent/5 blur-[80px]" />
 			
 			<div className="container relative">
 				{/* Section header */}
 				<div className="text-center mb-16">
-					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 glass-card border border-primary/20 animate-fade-in">
 						<TrendingUp className="h-4 w-4" />
 						Performance Metrics
 					</div>
-					<h2 className="text-4xl md:text-5xl font-bold mb-4">
-						Proven Results at Scale
+					<h2 className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up">
+						Proven Results at <span className="gradient-blue text-glow">Scale</span>
 					</h2>
-					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+					<p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
 						THNYX delivers measurable impact across every metric that matters to your business
 					</p>
 				</div>
@@ -131,14 +134,14 @@ export function MetricsSection() {
 						<div
 							key={metric.label}
 							className={cn(
-								"relative p-6 rounded-2xl border bg-card/50 backdrop-blur-sm transition-all duration-500",
-								"hover:shadow-lg hover:border-primary/50 hover:-translate-y-1",
+								"relative p-6 rounded-2xl border bg-card/50 glass-card transition-all duration-500 group",
+								"hover:shadow-2xl hover:border-primary/50 hover:-translate-y-1 hover-lift card-3d",
 								isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
 							)}
 							style={{ transitionDelay: `${index * 100}ms` }}
 						>
 							<div className="flex items-start justify-between mb-4">
-								<div className="p-3 rounded-lg bg-primary/10">
+								<div className="p-3 rounded-lg bg-primary/10 group-hover:scale-110 transition-transform group-hover:bg-primary/20">
 									<metric.icon className="h-6 w-6 text-primary" />
 								</div>
 								<span className="text-sm font-medium text-success flex items-center gap-1">
@@ -147,7 +150,7 @@ export function MetricsSection() {
 								</span>
 							</div>
 							<div className="space-y-2">
-								<div className="text-3xl font-bold">
+								<div className="text-3xl font-bold gradient-blue group-hover:text-glow transition-all">
 									{isVisible && (
 										<AnimatedCounter
 											value={metric.value}
@@ -165,11 +168,11 @@ export function MetricsSection() {
 
 				{/* Comparison table */}
 				<div className="max-w-4xl mx-auto">
-					<h3 className="text-2xl font-bold text-center mb-8">
+					<h3 className="text-2xl font-bold text-center mb-8 animate-slide-up" style={{ animationDelay: "0.4s" }}>
 						THNYX vs Traditional Call Centers
 					</h3>
-					<div className="rounded-2xl border bg-card/50 backdrop-blur-sm overflow-hidden">
-						<div className="grid grid-cols-4 gap-4 p-4 bg-muted/50 font-medium text-sm">
+					<div className="rounded-2xl border bg-card/50 glass-card overflow-hidden hover:shadow-xl transition-shadow animate-scale-in" style={{ animationDelay: "0.5s" }}>
+						<div className="grid grid-cols-4 gap-4 p-4 bg-muted/50 font-medium text-sm glass">
 							<div>Metric</div>
 							<div className="text-center">THNYX</div>
 							<div className="text-center">Traditional</div>
@@ -196,15 +199,15 @@ export function MetricsSection() {
 
 				{/* ROI Calculator CTA */}
 				<div className="mt-16 text-center">
-					<div className="inline-flex flex-col items-center gap-4 p-8 rounded-2xl bg-primary/5 border border-primary/20">
-						<Award className="h-12 w-12 text-primary" />
+					<div className="inline-flex flex-col items-center gap-4 p-8 rounded-2xl bg-primary/5 border border-primary/20 glass-card hover:scale-105 transition-transform cursor-pointer hover:border-primary/40 animate-fade-in" style={{ animationDelay: "0.8s" }}>
+						<Award className="h-12 w-12 text-primary animate-float" />
 						<h3 className="text-2xl font-bold">Calculate Your ROI</h3>
 						<p className="text-muted-foreground max-w-md">
 							See how much you could save by switching to THNYX's AI-powered call center
 						</p>
 						<a
 							href="/roi-calculator"
-							className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+							className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 transition-all glow-primary"
 						>
 							<DollarSign className="h-5 w-5" />
 							Calculate Savings

@@ -218,9 +218,12 @@ export function Features() {
 	const activeFeature = featureTabs.find(tab => tab.id === selectedTab) || featureTabs[0];
 
 	return (
-		<section id="features" className="py-20 relative overflow-hidden">
-			{/* Background gradient */}
+		<section id="features" className="py-20 relative overflow-hidden noise-overlay">
+			{/* Enhanced background */}
+			<div className="absolute inset-0 gradient-mesh opacity-20" />
 			<div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+			<div className="absolute left-0 top-1/2 h-[600px] w-[600px] rounded-full bg-primary/5 blur-[120px] -translate-y-1/2" />
+			<div className="absolute right-0 bottom-0 h-[400px] w-[400px] rounded-full bg-accent/5 blur-[100px]" />
 			
 			<div className="container relative">
 				{/* Section header */}
