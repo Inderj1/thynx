@@ -23,6 +23,7 @@ import {
 	EyeIcon,
 	EyeOffIcon,
 	MailboxIcon,
+	UserPlus,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -117,12 +118,18 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 
 	return (
 		<div>
-			<h1 className="font-bold text-xl md:text-2xl">
-				{t("auth.signup.title")}
-			</h1>
-			<p className="mt-1 mb-6 text-foreground/60">
-				{t("auth.signup.message")}
-			</p>
+			<div className="text-center mb-8">
+				<div className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 rounded-full bg-primary/10 text-primary text-sm font-medium">
+					<UserPlus className="h-4 w-4" />
+					Join THNYX AI Platform
+				</div>
+				<h1 className="font-bold text-2xl md:text-3xl mb-2">
+					{t("auth.signup.title")}
+				</h1>
+				<p className="text-foreground/60">
+					{t("auth.signup.message")}
+				</p>
+			</div>
 
 			{form.formState.isSubmitSuccessful && !invitationOnlyMode ? (
 				<Alert variant="success">
@@ -161,7 +168,11 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 											{t("auth.signup.name")}
 										</FormLabel>
 										<FormControl>
-											<Input {...field} />
+											<Input 
+												{...field} 
+												className="h-12 px-4 border-border/50 focus:border-primary"
+												placeholder="John Doe"
+											/>
 										</FormControl>
 										<FormMessage />
 									</FormItem>
@@ -181,6 +192,8 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 												{...field}
 												autoComplete="email"
 												readOnly={!!prefillEmail}
+												className="h-12 px-4 border-border/50 focus:border-primary"
+												placeholder="you@company.com"
 											/>
 										</FormControl>
 										<FormMessage />
@@ -204,9 +217,10 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 															? "text"
 															: "password"
 													}
-													className="pr-10"
+													className="h-12 pl-4 pr-12 border-border/50 focus:border-primary"
 													{...field}
 													autoComplete="new-password"
+													placeholder="••••••••"
 												/>
 												<button
 													type="button"
@@ -215,12 +229,12 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 															!showPassword,
 														)
 													}
-													className="absolute inset-y-0 right-0 flex items-center pr-4 text-primary text-xl"
+													className="absolute inset-y-0 right-0 flex items-center pr-4 text-foreground/60 hover:text-foreground transition-colors"
 												>
 													{showPassword ? (
-														<EyeOffIcon className="size-4" />
+														<EyeOffIcon className="size-5" />
 													) : (
-														<EyeIcon className="size-4" />
+														<EyeIcon className="size-5" />
 													)}
 												</button>
 											</div>
@@ -230,8 +244,13 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 								)}
 							/>
 
-							<Button loading={form.formState.isSubmitting}>
+							<Button 
+								loading={form.formState.isSubmitting}
+								className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+								size="lg"
+							>
 								{t("auth.signup.submit")}
+								<ArrowRightIcon className="ml-2 h-4 w-4" />
 							</Button>
 						</form>
 					</Form>
@@ -239,14 +258,14 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 					{config.auth.enableSignup &&
 						config.auth.enableSocialLogin && (
 							<>
-								<div className="relative my-6 h-4">
-									<hr className="relative top-2" />
-									<p className="-translate-x-1/2 absolute top-0 left-1/2 mx-auto inline-block h-4 bg-card px-2 text-center font-medium text-foreground/60 text-sm leading-tight">
+								<div className="relative my-8 h-4">
+									<hr className="relative top-2 border-border/30" />
+									<p className="-translate-x-1/2 absolute top-0 left-1/2 mx-auto inline-block h-4 bg-card px-3 text-center font-medium text-foreground/60 text-xs uppercase tracking-wider leading-tight">
 										{t("auth.login.continueWith")}
 									</p>
 								</div>
 
-								<div className="grid grid-cols-1 items-stretch gap-2 sm:grid-cols-2">
+								<div className="grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2">
 									{Object.keys(oAuthProviders).map(
 										(providerId) => (
 											<SocialSigninButton
@@ -254,6 +273,7 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 												provider={
 													providerId as OAuthProvider
 												}
+												className="h-12 border-border/50 hover:border-primary hover:bg-primary/5 transition-all"
 											/>
 										),
 									)}
@@ -263,7 +283,7 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 				</>
 			)}
 
-			<div className="mt-6 text-center text-sm">
+			<div className="mt-8 pt-8 border-t border-border/30 text-center text-sm">
 				<span className="text-foreground/60">
 					{t("auth.signup.alreadyHaveAccount")}{" "}
 				</span>
@@ -272,6 +292,7 @@ export function SignupForm({ prefillEmail }: { prefillEmail?: string }) {
 						"/auth/login",
 						Object.fromEntries(searchParams.entries()),
 					)}
+					className="text-primary hover:text-primary/80 font-medium transition-colors"
 				>
 					{t("auth.signup.signIn")}
 					<ArrowRightIcon className="ml-1 inline size-4 align-middle" />

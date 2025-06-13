@@ -249,7 +249,7 @@ export function NavBar() {
 										<NextLink href="/auth/login">Sign In</NextLink>
 									</Button>
 									<Button asChild className="bg-primary hover:bg-primary/90">
-										<LocaleLink href="/demo" className="flex items-center gap-2">
+										<LocaleLink href="/#demo" className="flex items-center gap-2">
 											<Phone className="h-4 w-4" />
 											Book Demo
 										</LocaleLink>

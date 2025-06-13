@@ -25,6 +25,7 @@ import {
 	EyeOffIcon,
 	KeyIcon,
 	MailboxIcon,
+	Sparkles,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -155,12 +156,18 @@ export function LoginForm() {
 
 	return (
 		<div>
-			<h1 className="font-bold text-xl md:text-2xl">
-				{t("auth.login.title")}
-			</h1>
-			<p className="mt-1 mb-6 text-foreground/60">
-				{t("auth.login.subtitle")}
-			</p>
+			<div className="text-center mb-8">
+				<div className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 rounded-full bg-primary/10 text-primary text-sm font-medium">
+					<Sparkles className="h-4 w-4" />
+					AI-Powered Call Center
+				</div>
+				<h1 className="font-bold text-2xl md:text-3xl mb-2">
+					{t("auth.login.title")}
+				</h1>
+				<p className="text-foreground/60">
+					{t("auth.login.subtitle")}
+				</p>
+			</div>
 
 			{form.formState.isSubmitSuccessful &&
 			signinMode === "magic-link" ? (
@@ -219,6 +226,8 @@ export function LoginForm() {
 											<Input
 												{...field}
 												autoComplete="email"
+												className="h-12 px-4 border-border/50 focus:border-primary"
+												placeholder="you@company.com"
 											/>
 										</FormControl>
 									</FormItem>
@@ -241,7 +250,7 @@ export function LoginForm() {
 
 													<Link
 														href="/auth/forgot-password"
-														className="text-foreground/60 text-xs"
+														className="text-primary hover:text-primary/80 text-xs font-medium transition-colors"
 													>
 														{t(
 															"auth.login.forgotPassword",
@@ -256,9 +265,10 @@ export function LoginForm() {
 																	? "text"
 																	: "password"
 															}
-															className="pr-10"
+															className="h-12 pl-4 pr-12 border-border/50 focus:border-primary"
 															{...field}
 															autoComplete="current-password"
+															placeholder="••••••••"
 														/>
 														<button
 															type="button"
@@ -267,12 +277,12 @@ export function LoginForm() {
 																	!showPassword,
 																)
 															}
-															className="absolute inset-y-0 right-0 flex items-center pr-4 text-primary text-xl"
+															className="absolute inset-y-0 right-0 flex items-center pr-4 text-foreground/60 hover:text-foreground transition-colors"
 														>
 															{showPassword ? (
-																<EyeOffIcon className="size-4" />
+																<EyeOffIcon className="size-5" />
 															) : (
-																<EyeIcon className="size-4" />
+																<EyeIcon className="size-5" />
 															)}
 														</button>
 													</div>
@@ -283,14 +293,15 @@ export function LoginForm() {
 								)}
 
 							<Button
-								className="w-full"
+								className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
 								type="submit"
-								variant="secondary"
+								size="lg"
 								loading={form.formState.isSubmitting}
 							>
 								{signinMode === "magic-link"
 									? t("auth.login.sendMagicLink")
 									: t("auth.login.submit")}
+								<ArrowRightIcon className="ml-2 h-4 w-4" />
 							</Button>
 						</form>
 					</Form>
@@ -299,14 +310,14 @@ export function LoginForm() {
 						(config.auth.enableSignup &&
 							config.auth.enableSocialLogin)) && (
 						<>
-							<div className="relative my-6 h-4">
-								<hr className="relative top-2" />
-								<p className="-translate-x-1/2 absolute top-0 left-1/2 mx-auto inline-block h-4 bg-card px-2 text-center font-medium text-foreground/60 text-sm leading-tight">
+							<div className="relative my-8 h-4">
+								<hr className="relative top-2 border-border/30" />
+								<p className="-translate-x-1/2 absolute top-0 left-1/2 mx-auto inline-block h-4 bg-card px-3 text-center font-medium text-foreground/60 text-xs uppercase tracking-wider leading-tight">
 									{t("auth.login.continueWith")}
 								</p>
 							</div>
 
-							<div className="grid grid-cols-1 items-stretch gap-2 sm:grid-cols-2">
+							<div className="grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2">
 								{config.auth.enableSignup &&
 									config.auth.enableSocialLogin &&
 									Object.keys(oAuthProviders).map(
@@ -316,17 +327,18 @@ export function LoginForm() {
 												provider={
 													providerId as OAuthProvider
 												}
+												className="h-12 border-border/50 hover:border-primary hover:bg-primary/5 transition-all"
 											/>
 										),
 									)}
 
 								{config.auth.enablePasskeys && (
 									<Button
-										variant="light"
-										className="w-full sm:col-span-2"
+										variant="outline"
+										className="w-full h-12 sm:col-span-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all"
 										onClick={() => signInWithPasskey()}
 									>
-										<KeyIcon className="mr-1.5 size-4 text-primary" />
+										<KeyIcon className="mr-2 size-4 text-primary" />
 										{t("auth.login.loginWithPasskey")}
 									</Button>
 								)}
@@ -335,7 +347,7 @@ export function LoginForm() {
 					)}
 
 					{config.auth.enableSignup && (
-						<div className="mt-6 text-center text-sm">
+						<div className="mt-8 pt-8 border-t border-border/30 text-center text-sm">
 							<span className="text-foreground/60">
 								{t("auth.login.dontHaveAnAccount")}{" "}
 							</span>
@@ -344,6 +356,7 @@ export function LoginForm() {
 									"/auth/signup",
 									Object.fromEntries(searchParams.entries()),
 								)}
+								className="text-primary hover:text-primary/80 font-medium transition-colors"
 							>
 								{t("auth.login.createAnAccount")}
 								<ArrowRightIcon className="ml-1 inline size-4 align-middle" />

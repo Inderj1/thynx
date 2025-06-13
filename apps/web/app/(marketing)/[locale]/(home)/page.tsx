@@ -9,6 +9,9 @@ import { UseCasesSection } from "@marketing/home/components/UseCasesSection";
 import { AITechnologySection } from "@marketing/home/components/AITechnologySection";
 import { SecurityComplianceSection } from "@marketing/home/components/SecurityComplianceSection";
 import { CustomerStoriesSection } from "@marketing/home/components/CustomerStoriesSection";
+import { DemoRequestSection } from "@marketing/home/components/DemoRequestSection";
+import { IntegrationsSection } from "@marketing/home/components/IntegrationsSection";
+import { ComparisonSection } from "@marketing/home/components/ComparisonSection";
 import { setRequestLocale } from "next-intl/server";
 
 export default async function Home({
@@ -29,7 +32,10 @@ export default async function Home({
 			<AITechnologySection />
 			<SecurityComplianceSection />
 			<Features />
+			<IntegrationsSection />
+			<ComparisonSection />
 			<PricingSection />
+			<DemoRequestSection />
 			<FaqSection />
 			<Newsletter />
 		</>
