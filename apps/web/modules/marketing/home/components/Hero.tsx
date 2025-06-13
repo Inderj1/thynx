@@ -162,20 +162,20 @@ export function Hero() {
 									</div>
 								</div>
 
-								<div className="grid grid-cols-3 gap-4">
-									<div className="p-4 bg-background/80 rounded-lg backdrop-blur-sm">
-										<TrendingUp className="h-5 w-5 text-success mb-2" />
-										<div className="text-2xl font-bold">98.5%</div>
+								<div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
+									<div className="p-3 sm:p-4 bg-background/80 rounded-lg backdrop-blur-sm">
+										<TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-success mb-1 sm:mb-2" />
+										<div className="text-xl sm:text-2xl font-bold">98.5%</div>
 										<div className="text-xs text-muted-foreground">Resolution Rate</div>
 									</div>
-									<div className="p-4 bg-background/80 rounded-lg backdrop-blur-sm">
-										<TrendingUp className="h-5 w-5 text-primary mb-2" />
-										<div className="text-2xl font-bold">4.8/5</div>
+									<div className="p-3 sm:p-4 bg-background/80 rounded-lg backdrop-blur-sm">
+										<TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-primary mb-1 sm:mb-2" />
+										<div className="text-xl sm:text-2xl font-bold">4.8/5</div>
 										<div className="text-xs text-muted-foreground">Customer Score</div>
 									</div>
-									<div className="p-4 bg-background/80 rounded-lg backdrop-blur-sm">
-										<TrendingUp className="h-5 w-5 text-accent mb-2" />
-										<div className="text-2xl font-bold">$127K</div>
+									<div className="p-3 sm:p-4 bg-background/80 rounded-lg backdrop-blur-sm">
+										<TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 text-accent mb-1 sm:mb-2" />
+										<div className="text-xl sm:text-2xl font-bold">$127K</div>
 										<div className="text-xs text-muted-foreground">Monthly Savings</div>
 									</div>
 								</div>
