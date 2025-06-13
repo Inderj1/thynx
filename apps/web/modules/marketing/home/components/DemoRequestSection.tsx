@@ -113,18 +113,23 @@ export function DemoRequestSection() {
 	}
 
 	return (
-		<section id="demo" className="py-20 relative overflow-hidden bg-muted/30">
+		<section id="demo" className="py-20 relative overflow-hidden bg-muted/30 noise-overlay">
+			{/* Enhanced background */}
+			<div className="absolute inset-0 gradient-mesh opacity-10" />
+			<div className="absolute left-1/2 top-0 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px] -translate-x-1/2 animate-pulse-glow" />
+			<div className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full bg-accent/5 blur-[80px]" />
+			
 			<div className="container">
 				{/* Section header */}
 				<div className="text-center mb-12">
-					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 glass-card border border-primary/20 animate-fade-in">
 						<Zap className="h-4 w-4" />
 						See THNYX in Action
 					</div>
-					<h2 className="text-4xl md:text-5xl font-bold mb-4">
-						Request a Demo Today
+					<h2 className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up">
+						Request a <span className="gradient-blue text-glow">Demo Today</span>
 					</h2>
-					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+					<p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
 						Discover how THNYX can transform your call center operations and reduce costs by 70%
 					</p>
 				</div>
@@ -141,7 +146,7 @@ export function DemoRequestSection() {
 									className="flex gap-4 animate-slide-up"
 									style={{ animationDelay: `${idx * 100}ms` }}
 								>
-									<div className="p-3 rounded-lg bg-primary/10 h-fit">
+									<div className="p-3 rounded-lg bg-primary/10 h-fit group-hover:scale-110 transition-transform">
 										<benefit.icon className="h-6 w-6 text-primary" />
 									</div>
 									<div>
@@ -161,10 +166,10 @@ export function DemoRequestSection() {
 										key={type.id}
 										onClick={() => setSelectedType(type.id)}
 										className={cn(
-											"w-full p-4 rounded-lg border text-left transition-all",
-											"hover:border-primary/50",
+											"w-full p-4 rounded-lg border text-left transition-all glass",
+											"hover:border-primary/50 hover:scale-[1.02] hover:shadow-lg",
 											selectedType === type.id
-												? "border-primary bg-primary/5"
+												? "border-primary bg-primary/5 shadow-lg glow-primary"
 												: "border-border bg-card"
 										)}
 									>
@@ -185,10 +190,10 @@ export function DemoRequestSection() {
 						</div>
 
 						{/* Stats */}
-						<div className="mt-8 p-4 rounded-lg bg-primary/5 border border-primary/20">
+						<div className="mt-8 p-4 rounded-lg bg-primary/5 border border-primary/20 glass-card hover:scale-105 transition-transform cursor-pointer">
 							<div className="grid grid-cols-3 gap-4 text-center">
 								<div>
-									<div className="text-2xl font-bold text-primary">500+</div>
+									<div className="text-2xl font-bold gradient-blue animate-gradient">500+</div>
 									<div className="text-xs text-muted-foreground">Demos Given</div>
 								</div>
 								<div>

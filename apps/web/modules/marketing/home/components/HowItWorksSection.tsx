@@ -73,26 +73,29 @@ export function HowItWorksSection() {
     const currentStep = steps[activeStep];
 
     return (
-        <div className="py-20 relative overflow-hidden bg-muted/30">
+        <div className="py-20 relative overflow-hidden bg-muted/30 noise-overlay">
+            {/* Enhanced background */}
+            <div className="absolute inset-0 gradient-mesh opacity-10" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+            <div className="absolute left-0 top-1/2 h-[400px] w-[400px] rounded-full bg-primary/5 blur-[100px] -translate-y-1/2" />
             
             <div className="container relative">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 glass-card border border-primary/20 animate-fade-in">
                         <Zap className="h-4 w-4" />
                         Simple Setup Process
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-slide-up">
                         From Zero to AI-Powered in
-                        <span className="gradient-blue"> 7 Days</span>
+                        <span className="gradient-blue text-glow"> 7 Days</span>
                     </h2>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
                         Our streamlined onboarding process gets you up and running faster than any competitor
                     </p>
                 </div>
 
-                <div className="relative mb-12">
-                    <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2" />
+                <div className="relative mb-12 animate-scale-in" style={{ animationDelay: "0.2s" }}>
+                    <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent -translate-y-1/2" />
                     <div className="relative flex justify-between max-w-4xl mx-auto">
                         {steps.map((step, index) => (
                             <button

@@ -2,6 +2,7 @@
 
 import { LocaleLink } from "@i18n/routing";
 import { Button } from "@ui/components/button";
+import { EnhancedButton } from "@marketing/shared/components/EnhancedButton";
 import { ArrowRightIcon, Phone, Play, CheckCircle, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -89,19 +90,19 @@ export function Hero() {
 
 				{/* CTA Buttons */}
 				<div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-					<Button size="lg" asChild className="min-w-[200px] bg-primary hover:bg-primary/90">
-						<LocaleLink href="/demo" className="flex items-center gap-2">
+					<EnhancedButton size="lg" asChild className="min-w-[200px]" glow gradient>
+						<LocaleLink href="/demo">
 							<Phone className="h-5 w-5" />
 							Book Live Demo
 							<ArrowRightIcon className="h-4 w-4" />
 						</LocaleLink>
-					</Button>
-					<Button size="lg" variant="outline" asChild className="min-w-[200px]">
-						<LocaleLink href="/investors" className="flex items-center gap-2">
+					</EnhancedButton>
+					<EnhancedButton size="lg" variant="outline" asChild className="min-w-[200px]" gradient>
+						<LocaleLink href="/investors">
 							<Play className="h-5 w-5" />
 							Watch 2-min Pitch
 						</LocaleLink>
-					</Button>
+					</EnhancedButton>
 				</div>
 
 				{/* Trust indicators */}
