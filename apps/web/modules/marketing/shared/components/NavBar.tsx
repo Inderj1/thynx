@@ -23,8 +23,7 @@ import {
 	Shield, 
 	Zap, 
 	Users, 
-	BookOpen, 
-	Phone,
+	BookOpen,
 	Building2,
 	Heart,
 	ShoppingCart,
@@ -238,11 +237,8 @@ export function NavBar() {
 									<NextLink href="/app">Dashboard</NextLink>
 								</Button>
 							) : (
-								<Button asChild className="bg-primary hover:bg-primary/90">
-									<LocaleLink href="/#demo" className="flex items-center gap-2">
-										<Phone className="h-4 w-4" />
-										Book Demo
-									</LocaleLink>
+								<Button variant="ghost" asChild>
+									<NextLink href="/auth/login">Login</NextLink>
 								</Button>
 							)}
 						</div>
@@ -322,11 +318,8 @@ export function NavBar() {
 												<NextLink href="/app">Dashboard</NextLink>
 											</Button>
 										) : (
-											<Button asChild className="w-full bg-primary hover:bg-primary/90">
-												<LocaleLink href="/#demo" className="flex items-center gap-2">
-													<Phone className="h-4 w-4" />
-													Book Demo
-												</LocaleLink>
+											<Button variant="outline" asChild className="w-full">
+												<NextLink href="/auth/login">Login</NextLink>
 											</Button>
 										)}
 									</div>
