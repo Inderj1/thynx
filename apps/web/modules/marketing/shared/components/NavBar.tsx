@@ -237,7 +237,7 @@ export function NavBar() {
 									<NextLink href="/app">Dashboard</NextLink>
 								</Button>
 							) : (
-								<Button variant="ghost" asChild>
+								<Button asChild className="bg-primary hover:bg-primary/90">
 									<NextLink href="/auth/login">Login</NextLink>
 								</Button>
 							)}
@@ -318,7 +318,7 @@ export function NavBar() {
 												<NextLink href="/app">Dashboard</NextLink>
 											</Button>
 										) : (
-											<Button variant="outline" asChild className="w-full">
+											<Button asChild className="w-full bg-primary hover:bg-primary/90">
 												<NextLink href="/auth/login">Login</NextLink>
 											</Button>
 										)}
