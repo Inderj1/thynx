@@ -70,10 +70,16 @@ const solutions = [
 
 const resources = [
 	{
+		title: "Learning Center",
+		href: "/resources",
+		description: "Guides, whitepapers, and best practices",
+		icon: BookOpen,
+	},
+	{
 		title: "Documentation",
 		href: "/docs",
 		description: "Get started with our API",
-		icon: BookOpen,
+		icon: FileText,
 	},
 	{
 		title: "Blog",
@@ -183,6 +189,10 @@ export function NavBar() {
 								))}
 							</DropdownMenuContent>
 						</DropdownMenu>
+
+						<LocaleLink href="/industries" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors">
+							Industries
+						</LocaleLink>
 
 						<LocaleLink href="/technology" className="px-3 py-2 text-sm font-medium hover:text-primary transition-colors">
 							Technology
