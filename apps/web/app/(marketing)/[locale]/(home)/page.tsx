@@ -1,6 +1,5 @@
 import { Features } from "@marketing/home/components/Features";
 import { Hero } from "@marketing/home/components/Hero";
-import { PricingSection } from "@marketing/home/components/PricingSection";
 import { MetricsSection } from "@marketing/home/components/MetricsSection";
 import { HowItWorksSection } from "@marketing/home/components/HowItWorksSection";
 import { CustomerStoriesSection } from "@marketing/home/components/CustomerStoriesSection";
@@ -22,7 +21,6 @@ export default async function Home({
 			<Features />
 			<HowItWorksSection />
 			<CustomerStoriesSection />
-			<PricingSection />
 			<DemoRequestSection />
 		</>
 	);
